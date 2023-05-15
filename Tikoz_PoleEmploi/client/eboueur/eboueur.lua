@@ -125,12 +125,13 @@ function jettrash(trash, pipo)
                 end
                 if IsControlJustPressed(1,51) then
                     
-                    SetVehicleDoorShut(pipo, 5, false, false)
+                    SetVehicleDoorOpen(pipo, 5, true, true)
                     Wait(2000)
                     TaskStartScenarioInPlace(PlayerPedId(), "PROP_HUMAN_BUM_BIN", 0, true)
                     Wait(2000)
                     ClearPedTasksImmediately(PlayerPedId())
                     DeleteObject(trash)
+                    SetVehicleDoorShut(pipo, 5, true, true)
                     msg = false
                     TriggerServerEvent("Tikoz/EboueurPaye", Config.Eboueur.PayeMin, Config.Eboueur.PayeMax)
                     findstrash(pipo, true)
