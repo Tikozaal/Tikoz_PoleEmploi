@@ -55,11 +55,11 @@ AddEventHandler('Tikoz:PERAFIRecoltefuel', function()
     local iteminventaire = xPlayer.getInventoryItem("petrole").count
 
     if iteminventaire >= 50 then
-        TriggerClientEvent('esx:showNotification', source, "Tu ne peux pas récolté plus de ~b~50 litres~s~ de ~b~~h~pétrole")
+        TriggerClientEvent('esx:showNotification', source, "Tu ne peux pas récolté plus de ~b~50 litres~s~ de ~b~pétrole")
         recoltefuel = false
     else
         xPlayer.addInventoryItem("petrole", 1)
-        TriggerClientEvent('esx:showNotification', source, "Vous récolté du ~b~~h~pétrole")
+        TriggerClientEvent('esx:showNotification', source, "Vous récolté du ~b~pétrole")
 		return
     end
 end)
@@ -72,17 +72,17 @@ AddEventHandler('Tikoz:PERAFITraitementfuel', function()
     local petrolnb = xPlayer.getInventoryItem("petrole").count
 
     if iteminventaire >= 50 then
-        TriggerClientEvent('esx:showNotification', source, "Vous ne pouvez pas récolté plus de ~b~~h~50 litres d'essence")
+        TriggerClientEvent('esx:showNotification', source, "Vous ne pouvez pas récolté plus de ~b~50 litres d'essence")
         traitefuel = false
     elseif petrolnb > 1 then
 
         xPlayer.removeInventoryItem("petrole", 2)
         xPlayer.addInventoryItem("essence", 1)
-        TriggerClientEvent('esx:showNotification', source, "Vous traitez le ~b~~h~pétrole")
+        TriggerClientEvent('esx:showNotification', source, "Vous traitez le ~b~pétrole")
 	    return
  
     elseif petrolnb < 1 then
-        TriggerClientEvent('esx:showNotification', source, "Vous avez pas assez de ~b~~h~pétrole ")
+        TriggerClientEvent('esx:showNotification', source, "Vous avez pas assez de ~b~pétrole ")
     end
 end)
 
