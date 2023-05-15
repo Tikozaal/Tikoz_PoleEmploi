@@ -92,12 +92,12 @@ AddEventHandler('Tikoz:PERAFIVendrefuel', function()
     local petrolnb = xPlayer.getInventoryItem("essence").count
     local payej = math.random(5, 10)
     if petrolnb == 0 then
-        TriggerClientEvent('esx:showNotification', source, "Vous ne pouvez plus vendre ~b~~h~d'essence")
+        TriggerClientEvent('esx:showNotification', source, "Vous ne pouvez plus vendre ~b~d'essence")
         ventefuel = false
     else
         xPlayer.addMoney(payej)
         xPlayer.removeInventoryItem("essence", 1)
-        TriggerClientEvent('esx:showNotification', source, "Vous avez gagné : ~g~~h~"..payej..'$')
+        TriggerClientEvent('esx:showNotification', source, "Vous avez gagné : ~g~"..payej..'$')
 	    return
     end
 end)
