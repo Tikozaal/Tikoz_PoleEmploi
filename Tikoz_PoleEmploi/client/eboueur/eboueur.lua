@@ -32,7 +32,7 @@ function start_mission()
         local po = GetHashKey(pi)
         RequestModel(po)
         while not HasModelLoaded(po) do Wait(0) end
-        pipo = CreateVehicle(po, Config.Eboueur.SpawnVehicule, false, false)
+        pipo = CreateVehicle(po, Config.Eboueur.SpawnVehicule, true, false)
         TaskWarpPedIntoVehicle(PlayerPedId(), pipo, -1)
         SetVehRadioStation(pipo, "OFF")
 
